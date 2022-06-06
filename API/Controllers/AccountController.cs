@@ -58,7 +58,8 @@ namespace API.Controllers
 
             for (int i = 0; i < computedHash.Length; i++)
             {
-                if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
+                if (computedHash[i] != user.PasswordHash[i]) 
+                    return Unauthorized("Invalid password");
             }
 
             return new UserDto
@@ -68,6 +69,8 @@ namespace API.Controllers
             };
         }
 
+
+        //check if a username entry already exists
         private async Task<bool> UserExists(string username)
         {
             return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
