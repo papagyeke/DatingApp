@@ -26,7 +26,10 @@
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "src/styles.css"
+              "./node_modules/bootswatch/dist/united/bootstrap.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css"              
             ],
             "scripts": []
           },
@@ -128,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "client"
+  "defaultProject": "client",
+  "cli": {
+    "analytics": "387d36f1-54ba-46d7-af63-68b3037c3451"
+  }
 }
