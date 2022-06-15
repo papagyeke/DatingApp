@@ -13,7 +13,9 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IPhotoService,PhotoService>();
             services.AddScoped<IUserRepository, UserRepository>();  //adding the repsitory pattern to the app services
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options =>
